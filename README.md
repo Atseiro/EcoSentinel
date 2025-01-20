@@ -102,11 +102,11 @@ EcoSentinel/
 ---
 
 ## 5. **Contributeurs**
-abderr23
-Florian Techer
-Jremy01
-linerol
-François-Alexian Lopes
-Atseiro
+abderr23  
+Florian Techer  
+Jremy01  
+linerol  
+François-Alexian Lopes  
+Atseiro  
 
 Merci à toutes les personnes qui participent à ce projet et contribuent à promouvoir un mode de vie écoresponsable. 🌱
