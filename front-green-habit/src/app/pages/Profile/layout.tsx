@@ -1,3 +1,8 @@
+/**
+ * @file DashboardLayout.js
+ * @description Composant de mise en page pour le tableau de bord, incluant l'en-tête, la barre de navigation et le contenu principal.
+ */
+
 import HomeIcon from "@/assets/HomeIcon";
 import SalesIcon from "@/assets/SalesIcon";
 import ProfileIcon from "@/assets/ProfileIcon";
@@ -7,6 +12,10 @@ import Navbar from "@/components/Navbar";
 import styles from "@/app/pages/Dashboard/page.module.scss";
 import FileIcon from "@/assets/FileIcon";
 
+/**
+ * Liste des éléments de navigation affichés dans la barre de navigation.
+ * @type {Array<{path: string, label: string, icon: JSX.Element}>}
+ */
 const navItems = [
   {
     path: "/pages/Dashboard",
@@ -19,7 +28,7 @@ const navItems = [
     icon: <FileIcon fill="black" width={15} height={15} />,
   },
   {
-    path: "/sales",
+    path: "",
     label: "Sales",
     icon: <SalesIcon fill="black" width={15} height={15} />,
   },
@@ -30,7 +39,12 @@ const navItems = [
   },
 ];
 
-// src/app/dashboard/layout.tsx
+/**
+ * @component
+ * @param {Object} props - Les props du composant.
+ * @param {React.ReactNode} props.children - Le contenu principal à afficher dans la mise en page.
+ * @returns {JSX.Element} Le composant de mise en page pour le tableau de bord.
+ */
 export default function DashboardLayout({
   children,
 }: {
@@ -38,7 +52,10 @@ export default function DashboardLayout({
 }) {
   return (
     <body>
+      {/* En-tête du tableau de bord */}
       <Header />
+
+      {/* Contenu principal avec navigation et contenu */}
       <main className={styles.main}>
         <Navbar navItems={navItems} />
         {children}

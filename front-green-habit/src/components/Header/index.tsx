@@ -5,15 +5,32 @@ import Logo from "@/assets/Logo";
 import SearchIcon from "@/assets/SearchIcon";
 import Button from "@/components/Button";
 
+/**
+ * @typedef {Object} Props
+ * @property {boolean} [isLanding] - Indique si le header est utilisé sur la page d'accueil.
+ * @property {boolean} [isDashboard] - Indique si le header est utilisé sur le tableau de bord.
+ */
 type Props = {
   isLanding?: boolean;
   isDashboard?: boolean;
 };
 
-const index = ({ isLanding, isDashboard }: Props) => {
+/**
+ * @description Composant Header affichant le logo, une barre de recherche et un bouton en fonction de la page.
+ * @param {Props} props - Les propriétés du composant Header.
+ * @returns {JSX.Element} Le composant Header.
+ */
+
+
+
+const Header = ({ isLanding, isDashboard }: Props) => {
+  /**
+   * @description Gère le clic sur le bouton de connexion.
+   */
   const handleClick = () => {
     window.location.href = "/pages/Authentification";
   };
+
   return (
     <header className={styles.header_main}>
       <div className={styles.header_logo}>
@@ -42,4 +59,4 @@ const index = ({ isLanding, isDashboard }: Props) => {
   );
 };
 
-export default index;
+export default Header;

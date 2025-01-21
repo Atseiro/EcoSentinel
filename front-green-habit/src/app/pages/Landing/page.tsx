@@ -1,16 +1,24 @@
-"use client"
+"use client";
 import React from 'react';
 import styles from "./page.module.scss";
 import LogoutIcon from "@/assets/LogoutIcon";
 import Button from "@/components/Button";
 
-// type Props = object
-
-
+/**
+ * @description Composant principal pour afficher une liste d'articles avec des boutons d'interaction.
+ */
 const Landing = () => {
+    /**
+     * @description Fonction appelée lorsqu'un bouton "Consulter" est cliqué.
+     */
     const handleClick = () => {
         console.log("click !");
     };
+
+    /**
+     * Liste des articles à afficher sur la page.
+     * @type {Array<{title: string, content: string}>}
+     */
     const articles = [
         {
             title: "The Importance of Recycling",
@@ -53,25 +61,26 @@ const Landing = () => {
             content: "Highlight local community efforts and initiatives aimed at promoting sustainability and environmental awareness."
         }
     ];
-  return (
-      <div className={styles.articles}>
-          {articles.map((article, index) => (
-              <div key={index} className={styles.article}>
-                  <h2>{article.title}</h2>
-                  <p>{article.content}</p>
-                  <Button 
-                      label="Consulter"
-                      icon={<LogoutIcon fill="white" width={15} height={15} />}
-                      classNames={["btn_primary", "btn_logout", "with_icon", "offset"]}
-                      type="button"
-                      handleClick={() => {
-                          handleClick();
-                      }}
-                  ></Button>
-              </div>
-          ))}
-      </div>
-  )
+
+    return (
+        <div className={styles.articles}>
+            {articles.map((article, index) => (
+                <div key={index} className={styles.article}>
+                    <h2>{article.title}</h2>
+                    <p>{article.content}</p>
+                    <Button 
+                        label="Consulter"
+                        icon={<LogoutIcon fill="white" width={15} height={15} />}
+                        classNames={["btn_primary", "btn_logout", "with_icon", "offset"]}
+                        type="button"
+                        handleClick={() => {
+                            handleClick();
+                        }}
+                    />
+                </div>
+            ))}
+        </div>
+    );
 };
 
-export default Landing
+export default Landing;

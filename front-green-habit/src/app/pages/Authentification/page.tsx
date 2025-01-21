@@ -1,4 +1,10 @@
-"use client"
+/**
+ * @file Authentification.js
+ * @description Composant d'authentification permettant aux utilisateurs de se connecter à leur compte.
+ * Inclut des validations de formulaire, des appels API et des redirections.
+ */
+
+"use client";
 
 import Image from "next/image";
 import authJpg from "../../../../public/auth.jpg";
@@ -8,27 +14,40 @@ import { useState } from "react";
 import ArrowIcon from "@/assets/ArrowIcon";
 import Logo from "@/assets/Logo";
 
-
+/**
+ * @component
+ * @returns {JSX.Element} Le composant d'authentification.
+ */
 export default function Authentification() {
+  // États pour l'email, le mot de passe et les erreurs
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({
     email: "",
     password: "",
   });
-  const [errorMessage, setErrorMessage] = useState(""); // Pour gérer les erreurs globales
+  const [errorMessage, setErrorMessage] = useState("");
 
-  // Fonction pour gérer le changement de l'email
+  /**
+   * Gère les changements dans le champ email.
+   * @param {React.ChangeEvent<HTMLInputElement>} e - L'événement de changement.
+   */
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
 
-  // Fonction pour gérer le changement du mot de passe
+  /**
+   * Gère les changements dans le champ mot de passe.
+   * @param {React.ChangeEvent<HTMLInputElement>} e - L'événement de changement.
+   */
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
   };
 
-  // Fonction pour valider le formulaire
+  /**
+   * Valide le formulaire avant soumission.
+   * @returns {boolean} true si le formulaire est valide, sinon false.
+   */
   const validateForm = () => {
     let valid = true;
     let emailError = "";
@@ -58,42 +77,42 @@ export default function Authentification() {
     return valid;
   };
 
+  /**
+   * Redirige l'utilisateur vers la page d'accueil.
+   */
   const handleClick = () => {
-    window.location.href = "/pages/Landing"
-  }
+    window.location.href = "/pages/Landing";
+  };
 
-  // Fonction qui est appelée lors de la soumission du formulaire
+  /**
+   * Soumet le formulaire et gère l'authentification de l'utilisateur.
+   * @param {React.FormEvent<HTMLFormElement>} e - L'événement de soumission.
+   */
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (validateForm()) {
-      // Si les champs sont valides, on peut soumettre le formulaire
       try {
-        console.log("Formulaire soumis");
-        console.log("Email:", email);
-        console.log("Password:", password);
+        console.log("Formulaire soumis", { email, password });
 
-        // Appel à l'API pour l'authentification
+        // Appel API pour l'authentification
         const response = await fetch("http://localhost:8888/login", {
-
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            username: email,  // Si c'est le login
+            username: email, // Correspond au login
             password: password,
           }),
         });
 
-        // Vérification de la réponse de l'API
         if (response.ok) {
           const data = await response.json();
           console.log("Connexion réussie", data);
 
-          // Sauvegarder le token ou rediriger, selon la logique
           localStorage.setItem("token", data.accessToken);
-          window.location.href = "/pages/Dashboard"; // Rediriger vers le tableau de bord
+          window.location.href = "/pages/Dashboard";
         } else {
           const errorData = await response.json();
           setErrorMessage(errorData.message || "Erreur lors de la connexion");
@@ -111,15 +130,14 @@ export default function Authentification() {
     <div className={styles.auth_container}>
       <div className={styles.auth_img}>
         <Image
-        
           src={authJpg}
           alt="background"
-          layout="fill" // Cette propriété permet à l'image de remplir l'élément parent
-          objectFit="cover" // Permet à l'image de couvrir toute la surface sans déformation
+          layout="fill"
+          objectFit="cover"
         />
       </div>
       <div className={styles.auth_content}>
-        <div className={styles.auth_logo} onClick={() => {handleClick()}}>
+        <div className={styles.auth_logo} onClick={handleClick}>
           <Logo width={82} height={59} fill="black" />
           <h1>My Dashboard</h1>
         </div>
