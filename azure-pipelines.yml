@@ -12,22 +12,12 @@ steps:
     versionSpec: '20.x'
   displayName: 'Use Node 20'
 
-# 1) "npm ci" in front-green-habit
-- task: Npm@1
-  displayName: 'Install dependencies (front-green-habit)'
-  inputs:
-    command: 'ci'
-    workingDir: 'front-green-habit'   # Adjust if your folder name differs
+- script: |
+    cd front-green-habit
+    npm ci
+    npm run build
+  displayName: 'Install & build front-green-habit'
 
-# 2) "npm run build" in front-green-habit
-- task: Npm@1
-  displayName: 'Build (front-green-habit)'
-  inputs:
-    command: 'custom'
-    workingDir: 'front-green-habit'
-    customCommand: 'run build'
-
-# 3) Deploy build folder to Azure Web App
 - task: AzureWebApp@1
   inputs:
     azureSubscription: 'Azure for Students'
