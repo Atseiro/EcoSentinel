@@ -1,6 +1,7 @@
 import HomeIcon from "@/assets/HomeIcon";
 import SalesIcon from "@/assets/SalesIcon";
 import ProfileIcon from "@/assets/ProfileIcon";
+import FileIcon from "@/assets/FileIcon";
 
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
@@ -13,12 +14,17 @@ const navItems = [
     icon: <HomeIcon fill="black" width={15} height={15} />,
   },
   {
+    path: "/pages/Landing",
+    label: "Articles",
+    icon: <FileIcon fill="black" width={15} height={15} />,
+  },
+  {
     path: "/sales",
     label: "Sales",
     icon: <SalesIcon fill="black" width={15} height={15} />,
   },
   {
-    path: "/profile",
+    path: "/pages/Profile",
     label: "Profile",
     icon: <ProfileIcon fill="black" width={15} height={15} />,
   },

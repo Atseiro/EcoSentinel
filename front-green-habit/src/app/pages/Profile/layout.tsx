@@ -4,7 +4,7 @@ import ProfileIcon from "@/assets/ProfileIcon";
 
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
-import styles from "./page.module.scss";
+import styles from "@/app/pages/Dashboard/page.module.scss";
 import FileIcon from "@/assets/FileIcon";
 
 const navItems = [
@@ -30,16 +30,17 @@ const navItems = [
   },
 ];
 
-export default function LandingLayout({
+// src/app/dashboard/layout.tsx
+export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
     <body>
-      <Header isLanding={true}/>
+      <Header />
       <main className={styles.main}>
-        <Navbar navItems={navItems}/>
+        <Navbar navItems={navItems} />
         {children}
       </main>
     </body>
