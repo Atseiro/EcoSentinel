@@ -16,7 +16,7 @@ export default function Home() {
       router.push("/pages/Dashboard");
     } else {
       // Redirige vers /authentication si le token est absent
-      router.push("/pages/Authentification");
+      router.push("/pages/Landing");
     }
   }, [router]); // Dépendance sur router
 

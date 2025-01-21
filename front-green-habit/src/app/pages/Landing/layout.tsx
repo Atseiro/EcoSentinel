@@ -30,7 +30,7 @@ export default function LandingLayout({
 }) {
   return (
     <body>
-      <Header />
+      <Header isLanding={true}/>
       <main>
         <Navbar navItems={navItems} />
         {children}

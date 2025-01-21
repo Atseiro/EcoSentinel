@@ -5,14 +5,14 @@ import NavItem from "./NavItem";
 import styles from "./navbar.module.scss"
 import LogoutIcon from "@/assets/LogoutIcon";
 
-interface ImageData {
-  src: string;
-  width: number;
-  height: number;
-  blurDataURL: string | null;
-  blurWidth: number;
-  blurHeight: number;
-}
+// interface ImageData {
+//   src: string;
+//   width: number;
+//   height: number;
+//   blurDataURL: string | null;
+//   blurWidth: number;
+//   blurHeight: number;
+// }
 
 interface NavItem {
   path: string;
@@ -25,6 +25,7 @@ type Props = {
 };
 
 const index = ({ navItems }: Props) => {
+  const isToken = localStorage.getItem('token')
   const handleClick = () => {
     console.log("click !");
   };
@@ -35,6 +36,7 @@ const index = ({ navItems }: Props) => {
           return <NavItem key={key} navItem={item} />;
         })}
       </ul>
+      {isToken &&
       <Button
         label="Logout"
         icon={<LogoutIcon fill="white" width={15} height={15} />}
@@ -44,6 +46,7 @@ const index = ({ navItems }: Props) => {
           handleClick();
         }}
       ></Button>
+      }
     </aside>
   );
 };

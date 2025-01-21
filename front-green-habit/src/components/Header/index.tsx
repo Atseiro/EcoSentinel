@@ -1,11 +1,18 @@
+'use client';
 import React from "react";
 import styles from "./header.module.scss";
 import Logo from "@/assets/Logo";
 import SearchIcon from "@/assets/SearchIcon";
+import Button from '@/components/Button'
 
-type Props = object;
+type Props = {
+  isLanding? : boolean
+};
 
-const index = ({}: Props) => {
+const index = ({isLanding}: Props) => {
+  const handleClick = () => {
+    window.location.href = "/pages/Authentification";
+  }
   return (
     <header className={styles.header_main}>
       <div className={styles.header_logo}>
@@ -18,6 +25,17 @@ const index = ({}: Props) => {
           <input type="search" placeholder="Search" />
         </div>
       </div>
+      {isLanding &&
+        <Button
+        label="se connecter"
+        handleClick={() => {
+          handleClick()
+        }}
+        type="button"
+        classNames={['btn_primary']}
+        />
+      }
+
     </header>
   );
 };
