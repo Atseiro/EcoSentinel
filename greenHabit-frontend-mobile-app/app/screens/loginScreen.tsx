@@ -1,15 +1,32 @@
+/**
+ * Ce fichier définit l'écran de connexion de l'application.
+ * Il permet à l'utilisateur de se connecter avec un email et un mot de passe.
+ *
+ * @module LoginScreen
+ */
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
 import { usersData, User } from '../../data/userData';
 
+/**
+ * Props pour le composant LoginScreen.
+ */
 type LoginScreenProps = {
-  navigation: any; // Utilisez le type correct pour la navigation si possible
+  navigation: any;
 };
 
+/**
+ * Composant pour l'écran de connexion.
+ * @param {LoginScreenProps} props - Les props du composant.
+ * @returns {JSX.Element} L'écran de connexion.
+ */
 const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  /**
+   * Gère la connexion de l'utilisateur.
+   */
   const handleLogin = () => {
     const user = usersData.find((user) => user.email === email && user.password === password);
     if (user) {

@@ -1,7 +1,16 @@
+/**
+ * Ce fichier définit le contexte d'authentification de l'application.
+ * Il gère l'état de connexion de l'utilisateur et fournit des méthodes pour se connecter et se déconnecter.
+ *
+ * @module AuthContext
+ */
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { User } from '../data/userData';
 
+/**
+ * Type pour le contexte d'authentification.
+ */
 type AuthContextType = {
   user: User | null;
   login: (user: User) => Promise<void>;
@@ -11,6 +20,12 @@ type AuthContextType = {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+/**
+ * Fournisseur de contexte d'authentification.
+ * @param {Object} props - Les props du composant.
+ * @param {ReactNode} props.children - Les enfants du composant.
+ * @returns {JSX.Element} Le fournisseur de contexte.
+ */
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true); // État de chargement initial
@@ -28,13 +43,18 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     checkLoggedInUser();
   }, []);
 
-  // Fonction de connexion
+  /**
+   * Connecte l'utilisateur.
+   * @param {User} user - L'utilisateur à connecter.
+   */
   const login = async (user: User) => {
     await AsyncStorage.setItem('user', JSON.stringify(user)); // Enregistrer l'utilisateur dans AsyncStorage
     setUser(user);
   };
 
-  // Fonction de déconnexion
+  /**
+   * Déconnecte l'utilisateur.
+   */
   const logout = async () => {
     await AsyncStorage.removeItem('user'); // Supprimer l'utilisateur de AsyncStorage
     setUser(null);
@@ -47,6 +67,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
+/**
+ * Hook pour utiliser le contexte d'authentification.
+ * @returns {AuthContextType} Le contexte d'authentification.
+ */
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {

@@ -1,11 +1,23 @@
+/**
+ * Ce fichier définit l'écran de gestion des objectifs.
+ * Il permet à l'utilisateur de créer, suivre et supprimer des objectifs.
+ *
+ * @module GoalsScreen
+ */
 import React, { useState } from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity, TextInput, Alert, ScrollView } from 'react-native';
 import { goalsData, Goal, MiniTask } from '../../data/goalsData';
 import { Picker } from '@react-native-picker/picker';
 
-// Types pour les catégories
+/**
+ * Type pour les catégories d'objectifs.
+ */
 type Category = 'Énergie' | 'Déchets' | 'Transport' | 'Alimentation' | 'Eau' | 'Consommation';
 
+/**
+ * Composant pour l'écran des objectifs.
+ * @returns {JSX.Element} L'écran des objectifs.
+ */
 const GoalsScreen: React.FC = () => {
   const [goals, setGoals] = useState<Goal[]>(goalsData);
   const [newGoalTitle, setNewGoalTitle] = useState<string>('');

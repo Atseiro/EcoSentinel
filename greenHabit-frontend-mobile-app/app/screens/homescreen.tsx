@@ -1,7 +1,16 @@
+/**
+ * Ce fichier définit l'écran d'accueil de l'application.
+ * Il affiche des informations sur l'utilisateur, l'objectif du jour, les progrès,
+ * un article suggéré et la dernière notification.
+ *
+ * @module HomeScreen
+ */
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native';
 
-// Données statiques pour la page d'accueil
+/**
+ * Données statiques pour la page d'accueil.
+ */
 const user = {
   name: 'Alice Dupont',
   avatar: 'https://example.com/avatar.jpg',
@@ -17,6 +26,10 @@ const user = {
   },
 };
 
+/**
+ * Composant pour l'écran d'accueil.
+ * @returns {JSX.Element} L'écran d'accueil.
+ */
 const HomeScreen: React.FC = () => {
   return (
     <ScrollView style={styles.container}>

@@ -1,9 +1,23 @@
+/**
+ * Ce fichier définit l'écran des notifications.
+ * Il permet à l'utilisateur de gérer les paramètres de notification
+ * et affiche les notifications récentes.
+ *
+ * @module NotificationsScreen
+ */
 import React, { useState } from 'react';
 import { View, Text, Switch, FlatList, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { notificationsData, Notification } from '../../data/notificationsData';
 
+/**
+ * Type pour les types de notification.
+ */
 type NotificationType = 'reminder' | 'motivation' | 'general';
 
+/**
+ * Composant pour l'écran des notifications.
+ * @returns {JSX.Element} L'écran des notifications.
+ */
 const NotificationsScreen: React.FC = () => {
   const [notificationSettings, setNotificationSettings] = useState({
     reminder: true,
@@ -11,7 +25,10 @@ const NotificationsScreen: React.FC = () => {
     general: true,
   });
 
-  // Fonction pour basculer les paramètres de notification
+  /**
+   * Bascule les paramètres de notification.
+   * @param {NotificationType} type - Le type de notification à basculer.
+   */
   const toggleNotificationSetting = (type: NotificationType) => {
     setNotificationSettings((prevSettings) => ({
       ...prevSettings,
@@ -24,7 +41,12 @@ const NotificationsScreen: React.FC = () => {
     (notification) => notificationSettings[notification.type]
   );
 
-  // Rendu d'une notification
+  /**
+   * Rendu d'une notification.
+   * @param {Object} param0 - Les propriétés de la notification.
+   * @param {Notification} param0.item - La notification à afficher.
+   * @returns {JSX.Element} La notification rendue.
+   */
   const renderNotification = ({ item }: { item: Notification }) => (
     <View style={[styles.notificationContainer, styles[item.type]]}>
       <Text style={styles.notificationMessage}>{item.message}</Text>

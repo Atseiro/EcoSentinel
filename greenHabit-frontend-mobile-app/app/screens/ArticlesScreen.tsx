@@ -1,7 +1,16 @@
+/**
+ * Ce fichier définit l'écran des articles et tutoriels.
+ * Il affiche des articles suggérés en fonction des objectifs de l'utilisateur
+ * et une liste de tous les articles disponibles.
+ *
+ * @module ArticlesScreen
+ */
 import React from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity, ScrollView, Image } from 'react-native';
 
-// Données statiques pour les articles
+/**
+ * Données statiques pour les articles.
+ */
 const articlesData = [
   {
     id: 1,
@@ -33,6 +42,10 @@ const articlesData = [
   },
 ];
 
+/**
+ * Composant pour l'écran des articles.
+ * @returns {JSX.Element} L'écran des articles.
+ */
 const ArticlesScreen: React.FC = () => {
   // Simuler les objectifs de l'utilisateur (à remplacer par des données dynamiques plus tard)
   const userGoals = ['Déchets', 'Transport']; // Exemple d'objectifs de l'utilisateur

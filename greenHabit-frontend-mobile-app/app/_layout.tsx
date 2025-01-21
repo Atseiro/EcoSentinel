@@ -1,8 +1,14 @@
+/**
+ * Ce fichier définit la structure de navigation de l'application.
+ * Il utilise `@react-navigation/native-stack` pour la navigation en pile
+ * et `@react-navigation/bottom-tabs` pour la navigation par onglets.
+ *
+ * @module Navigation
+ */
 import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons } from '@expo/vector-icons'; // Importez les icônes
-
+import { Ionicons } from '@expo/vector-icons';
 import LoginScreen from './screens/loginScreen';
 import HomeScreen from "./screens/homescreen";
 import GoalsScreen from "./screens/goalscreen";
@@ -14,9 +20,15 @@ import ArticlesScreen from './screens/ArticlesScreen';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-// Définir un type pour les noms d'icônes valides
+/**
+ * Type pour les noms d'icônes valides.
+ */
 type IconName = 'home' | 'home-outline' | 'flag' | 'flag-outline' | 'notifications' | 'notifications-outline' | 'camera' | 'camera-outline' | 'stats-chart' | 'stats-chart-outline' | 'book' | 'book-outline';
 
+/**
+ * Composant pour la navigation par onglets.
+ * @returns {JSX.Element} La navigation par onglets.
+ */
 function HomeTabs() {
   return (
     <Tab.Navigator
@@ -84,6 +96,10 @@ function HomeTabs() {
   );
 }
 
+/**
+ * Composant racine de l'application.
+ * @returns {JSX.Element} La structure de navigation de l'application.
+ */
 export default function RootLayout() {
   return (
     <Stack.Navigator initialRouteName="Login">

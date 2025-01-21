@@ -1,23 +1,45 @@
+/**
+ * Ce fichier définit l'écran de suivi des progrès.
+ * Il affiche les progrès de l'utilisateur, un classement et des badges.
+ *
+ * @module ProgressScreen
+ */
 import React from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, ScrollView, Image, Alert } from 'react-native';
 import { usersData, User } from '../../data/userData';
 
+/**
+ * Props pour le composant ProgressScreen.
+ */
 type ProgressScreenProps = {
-  navigation: any; // Utilisez le type correct pour la navigation si possible
+  navigation: any;
 };
 
+/**
+ * Composant pour l'écran de suivi des progrès.
+ * @param {ProgressScreenProps} props - Les props du composant.
+ * @returns {JSX.Element} L'écran de suivi des progrès.
+ */
 const ProgressScreen: React.FC<ProgressScreenProps> = ({ navigation }) => {
   // Données statiques pour les utilisateurs et leurs progrès
   const currentUser = usersData[0]; // Simule l'utilisateur actuel
   const otherUsers = usersData.slice(1); // Simule d'autres utilisateurs
 
-  // Fonction pour partager les progrès
+  /**
+   * Gère le partage des progrès.
+   */
   const shareProgress = () => {
     Alert.alert('Partager', 'Partagez vos progrès sur les réseaux sociaux !');
     // Ici, vous pouvez intégrer une bibliothèque de partage comme `react-native-share`
   };
 
-  // Rendu d'un utilisateur dans le classement
+  /**
+   * Rendu d'un utilisateur dans le classement.
+   * @param {Object} param0 - Les propriétés de l'utilisateur.
+   * @param {User} param0.item - L'utilisateur à afficher.
+   * @param {number} param0.index - L'index de l'utilisateur dans la liste.
+   * @returns {JSX.Element} L'utilisateur rendu.
+   */
   const renderUser = ({ item, index }: { item: User; index: number }) => (
     <View style={styles.userCard}>
       <Text style={styles.rank}>#{index + 1}</Text>
