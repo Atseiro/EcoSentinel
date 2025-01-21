@@ -1,5 +1,6 @@
 // Chargement des variables d'environnement depuis le fichier .env
 require('dotenv').config();
+const { testConnection } = require('./db');
 
 // Importation des modules nécessaires
 const express = require('express');
@@ -8,6 +9,14 @@ const jwt = require('jsonwebtoken');
 
 // Middleware pour analyser les requêtes JSON
 app.use(express.json());
+
+// Tester la connexion au démarrage
+testConnection()
+  .then(() => console.log('Connexion réussie à la base de données SQL Azure'))
+  .catch(err => {
+    console.error('Échec de la connexion à la base de données:', err.message);
+    process.exit(1); // Arrêter le serveur si la connexion échoue
+  });
 
 // Données fictives pour les posts (à remplacer par une base de données en production)
 const posts = [
