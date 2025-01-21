@@ -19,7 +19,7 @@ const navItems = [
     icon: <FileIcon fill="black" width={15} height={15} />,
   },
   {
-    path: "/sales",
+    path: "",
     label: "Sales",
     icon: <SalesIcon fill="black" width={15} height={15} />,
   },
@@ -38,7 +38,7 @@ export default function DashboardLayout({
 }) {
   return (
     <body>
-      <Header />
+      <Header isDashboard={true}/>
       <main className={styles.main}>
         <Navbar navItems={navItems} />
         {children}

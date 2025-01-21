@@ -27,7 +27,8 @@ type Props = {
 const index = ({ navItems }: Props) => {
   const isToken = localStorage.getItem('token')
   const handleClick = () => {
-    console.log("click !");
+    localStorage.removeItem("token")
+    window.location.href = "/pages/Authentification";
   };
   return (
     <aside className={`${styles.sidebar}`}>

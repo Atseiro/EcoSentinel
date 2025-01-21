@@ -19,7 +19,7 @@ const navItems = [
     icon: <FileIcon fill="black" width={15} height={15} />,
   },
   {
-    path: "/sales",
+    path: "",
     label: "Sales",
     icon: <SalesIcon fill="black" width={15} height={15} />,
   },

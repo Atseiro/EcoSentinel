@@ -58,6 +58,10 @@ export default function Authentification() {
     return valid;
   };
 
+  const handleClick = () => {
+    window.location.href = "/pages/Landing"
+  }
+
   // Fonction qui est appelée lors de la soumission du formulaire
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -107,6 +111,7 @@ export default function Authentification() {
     <div className={styles.auth_container}>
       <div className={styles.auth_img}>
         <Image
+        
           src={authJpg}
           alt="background"
           layout="fill" // Cette propriété permet à l'image de remplir l'élément parent
@@ -114,7 +119,7 @@ export default function Authentification() {
         />
       </div>
       <div className={styles.auth_content}>
-        <div className={styles.auth_logo}>
+        <div className={styles.auth_logo} onClick={() => {handleClick()}}>
           <Logo width={82} height={59} fill="black" />
           <h1>My Dashboard</h1>
         </div>
