@@ -1,10 +1,9 @@
 "use client"
 
 import Image from "next/image";
-import authJpg from "../../../public/auth.jpg";
-// import arrowSvg from "../../../public/arrow.svg"
+import authJpg from "../../../../public/auth.jpg";
 import styles from "./authentification.module.scss";
-import Button from "@/components/Button"
+import Button from "@/components/Button";
 import { useState } from "react";
 import ArrowIcon from "@/assets/ArrowIcon";
 import Logo from "@/assets/Logo";
@@ -16,6 +15,7 @@ export default function Authentification() {
     email: "",
     password: "",
   });
+  const [errorMessage, setErrorMessage] = useState(""); // Pour gérer les erreurs globales
 
   // Fonction pour gérer le changement de l'email
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,16 +58,49 @@ export default function Authentification() {
   };
 
   // Fonction qui est appelée lors de la soumission du formulaire
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (validateForm()) {
       // Si les champs sont valides, on peut soumettre le formulaire
-      console.log("Formulaire soumis");
-      console.log("Email:", email);
-      console.log("Password:", password);
+      try {
+        console.log("Formulaire soumis");
+        console.log("Email:", email);
+        console.log("Password:", password);
+
+        // Appel à l'API pour l'authentification
+        const response = await fetch("http://localhost:8888/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: email,  // Si c'est le login
+            password: password,
+          }),
+        });
+
+        // Vérification de la réponse de l'API
+        if (response.ok) {
+          const data = await response.json();
+          console.log("Connexion réussie", data);
+
+          // Sauvegarder le token ou rediriger, selon la logique
+          localStorage.setItem("token", data.accessToken);
+          window.location.href = "/pages/dashboard"; // Rediriger vers le tableau de bord
+        } else {
+          const errorData = await response.json();
+          setErrorMessage(errorData.message || "Erreur lors de la connexion");
+        }
+      } catch (error) {
+        setErrorMessage("Erreur de connexion au serveur");
+        console.error("Erreur lors de la connexion:", error);
+      }
+    } else {
+      setErrorMessage("Veuillez remplir tous les champs.");
     }
   };
+
   return (
     <div className={styles.auth_container}>
       <div className={styles.auth_img}>
@@ -80,7 +113,7 @@ export default function Authentification() {
       </div>
       <div className={styles.auth_content}>
         <div className={styles.auth_logo}>
-        {<Logo width={82} height={59} fill="black" />}
+          <Logo width={82} height={59} fill="black" />
           <h1>My Dashboard</h1>
         </div>
         <h1>Login to your account</h1>
@@ -110,14 +143,18 @@ export default function Authentification() {
               <p style={{ color: "red" }}>{errors.password}</p>
             )}
           </div>
-            <Button
+
+          {errorMessage && (
+            <p style={{ color: "red", textAlign: "center" }}>{errorMessage}</p>
+          )}
+
+          <Button
             label="Login"
             classNames={["btn_primary", "with_icon"]}
             icon={<ArrowIcon fill="white" width={15} height={15} />}
             type="submit"
             iconPosition="right"
-            ></Button>
-          
+          />
         </form>
       </div>
     </div>
