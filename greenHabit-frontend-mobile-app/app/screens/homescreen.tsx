@@ -100,6 +100,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   userName: {
+    marginTop: 20,
     fontSize: 20,
     fontWeight: 'bold',
     color: '#2c3e50',

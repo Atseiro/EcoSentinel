@@ -107,13 +107,15 @@ npm install
 ### Démarrer l'application :
 
 ```bash
-npm start
+npm run start
 ```
 
 ### Exécuter sur un appareil ou un émulateur :
 - Utilisez l'application **Expo Go** sur votre smartphone pour scanner le QR code affiché dans le terminal.
 - Ou utilisez un émulateur Android/iOS pour tester l'application.
-
+- Connectez-vous avec:
+  - mail: 'alice.dupont@example.com'
+  - password: securepassword123
 ---
 
 ## Liens Utiles 🔗
