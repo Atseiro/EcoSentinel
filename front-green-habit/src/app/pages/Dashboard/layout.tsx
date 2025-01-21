@@ -4,10 +4,11 @@ import ProfileIcon from "@/assets/ProfileIcon";
 
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
+import styles from "@/app/pages/Dashboard/page.module.scss";
 
 const navItems = [
   {
-    path: "/dashboard",
+    path: "/pages/Dashboard",
     label: "Dashboard",
     icon: <HomeIcon fill="black" width={15} height={15} />,
   },
@@ -32,7 +33,7 @@ export default function DashboardLayout({
   return (
     <body>
       <Header />
-      <main>
+      <main className={styles.main}>
         <Navbar navItems={navItems} />
         {children}
       </main>

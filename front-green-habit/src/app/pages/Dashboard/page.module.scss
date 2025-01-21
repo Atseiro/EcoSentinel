@@ -7,3 +7,27 @@
   grid-template-columns: repeat(4, 1fr); // 4 colonnes
   gap: 35px 24px; // Espacement vertical et horizontal
 }
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: normal;
+  align-content: normal;
+}
+.Navbar {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}
+.chart_container
+{
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}

@@ -8,6 +8,7 @@ import { useState } from "react";
 import ArrowIcon from "@/assets/ArrowIcon";
 import Logo from "@/assets/Logo";
 
+
 export default function Authentification() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -70,6 +71,7 @@ export default function Authentification() {
 
         // Appel à l'API pour l'authentification
         const response = await fetch("http://localhost:8888/login", {
+
           method: "POST",
           headers: {
             "Content-Type": "application/json",
