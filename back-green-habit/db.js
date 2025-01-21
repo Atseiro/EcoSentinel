@@ -22,6 +22,16 @@ async function testConnection() {
   }
 }
 
+async function getAllUsers() {
+    const result = await pool.query('SELECT * FROM users'); // Adaptez la requête selon votre schéma
+    return result.rows;
+  }
+
+async function getAllArticles() {
+    const result = await pool.query('SELECT * FROM articles'); // Adaptez la requête selon votre schéma
+    return result.rows;
+  }
+
 // Fonction pour exécuter des requêtes SQL
 async function executeQuery(query, params = {}) {
   try {
@@ -41,4 +51,4 @@ async function executeQuery(query, params = {}) {
   }
 }
 
-module.exports = { testConnection, executeQuery };
+module.exports = { testConnection, getAllUsers, getAllArticles, executeQuery };

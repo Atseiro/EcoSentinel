@@ -30,6 +30,20 @@ app.get('/posts', authenticateToken, (req, res) => {
   res.json(posts.filter(post => post.username === req.user.name));
 });
 
+app.get('/users', authenticateToken, async (req, res) => {
+  try {
+    // Appel à la fonction qui récupère tous les utilisateurs depuis la base de données
+    const users = await getAllUsers();
+    
+    // Renvoi des utilisateurs au format JSON
+    res.json(users);
+  } catch (err) {
+    // Si une erreur survient lors de la récupération des utilisateurs, renvoi d'un statut d'erreur
+    console.error('Erreur lors de la récupération des utilisateurs:', err);
+    res.status(500).send('Erreur interne du serveur');
+  }
+});
+
 // Middleware pour authentifier les requêtes en vérifiant le token
 function authenticateToken(req, res, next) {
   // Récupération du token dans l'en-tête "Authorization"
