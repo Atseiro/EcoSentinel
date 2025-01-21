@@ -4,6 +4,18 @@ from surprise.model_selection import train_test_split
 from surprise import accuracy
 from collections import defaultdict
 
+
+
+# Documentation technique du  composant
+'''
+Pour le model de recommandation, nous avons du fais un exemple de donnée de notre base de donnée, afin d'entrainer le model et de le rendre opérationel.
+Nous avons pour cela utiliser un 'SVDpp' de la librairie scikit-learn surprise. Le model prédira quel article l'utilisateur a le plus de chance d'aimer.
+A partir de la, nous avons mis en place une fonction qui recommandera les articles en lien avec le projet que l'utilisateur a choisit.
+
+'''
+
+
+
 # Exemple de données
 data = {
     "user_id": [1, 1, 2, 2, 3, 3, 4, 4,5],

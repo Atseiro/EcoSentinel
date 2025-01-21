@@ -1,0 +1,224 @@
+{
+    "total_users": 27,
+    "users": [
+        {
+        "user_id": 1,
+        "username": "ecogreen123",     
+        "goal_id": 26,
+        "goal_description": "Réduire la consommation d'objets matériels en privilégiant des choix de qualité et durables.",
+        "progress": "60%",
+        "deadline": "2025-12-31"
+        },
+        {
+        "user_id": 11,
+        "username": "bilal", 
+        "goal_id": 2,
+        "goal_description": "Passer à une source d'énergie verte pour la maison, comme l'énergie solaire ou éolienne.",
+        "progress": "40%",
+        "deadline": "2025-06-30"
+        },
+        {
+        "user_id": 12,
+        "username": "max33", 
+        "goal_id": 4,
+        "goal_description": "Mettre en place un compost pour réduire les déchets organiques envoyés à la décharge.",
+        "progress": "50%",
+        "deadline": "2025-08-15"
+        },
+        {
+        "user_id": 13,
+        "username": "fox42", 
+        "goal_id": 8,
+        "goal_description": "Réparer ou recycler les appareils électroniques pour éviter qu'ils ne finissent dans les décharges.",
+        "progress": "20%",
+        "deadline": "2025-11-30"
+        },
+        {
+        "user_id": 2,
+        "username": "green_fairy",
+        "goal_id": 4,
+        "goal_description": "Mettre en place un compost pour réduire les déchets organiques envoyés à la décharge.",
+        "progress": "80%",
+        "deadline": "2025-05-15"
+        },
+        {
+        "user_id": 14,
+        "username": "qualo", 
+        "goal_id": 4,
+        "goal_description": "Mettre en place un compost pour réduire les déchets organiques envoyés à la décharge.",
+        "progress": "30%",
+        "deadline": "2025-10-01"
+        },
+        {
+        "user_id": 15,
+        "username": "speed1", 
+        "goal_id": 9,
+        "goal_description": "Participer à des événements de plantation d'arbres pour contribuer à la lutte contre la déforestation.",
+        "progress": "10%",
+        "deadline": "2025-12-20"
+        },
+        {
+        "user_id": 16,
+        "username": "light_3301", 
+        "goal_id": 8,
+        "goal_description": "Réparer ou recycler les appareils électroniques pour éviter qu'ils ne finissent dans les décharges.",
+        "progress": "70%",
+        "deadline": "2025-07-30"
+        },
+        {
+        "user_id": 17,
+        "username": "harlem_01", 
+        "goal_id": 11,
+        "goal_description": "Encourager l'utilisation des transports publics plutôt que la voiture individuelle.",
+        "progress": "50%",
+        "deadline": "2025-06-15"
+        },
+        {
+        "user_id": 3,
+        "username": "sustainable_sam", 
+        "goal_id": 8,
+        "goal_description": "Réparer ou recycler les appareils électroniques pour éviter qu'ils ne finissent dans les décharges.",
+        "progress": "50%",
+        "deadline": "2026-01-01"
+        },
+        {
+        "user_id": 18,
+        "username": "steph07", 
+        "goal_id": 6,
+        "goal_description": "Privilégier les produits alimentaires locaux et de saison pour soutenir l'agriculture durable et réduire l'empreinte carbone.",
+        "progress": "70%",
+        "deadline": "2025-07-30"
+        },
+        {
+        "user_id": 19,
+        "username": "kd_153", 
+        "goal_id": 12,
+        "goal_description": "Passer au tout numérique dans la mesure du possible, et privilégier le papier recyclé.",
+        "progress": "65%",
+        "deadline": "2025-09-10"
+        },
+        {
+        "user_id": 20,
+        "username": "lbj12", 
+        "goal_id": 8,
+        "goal_description": "Réparer ou recycler les appareils électroniques pour éviter qu'ils ne finissent dans les décharges.",
+        "progress": "20%",
+        "deadline": "2026-04-01"
+        },
+        {
+        "user_id": 4,
+        "username": "earth_warrior",
+        "goal_id": 4,
+        "goal_description": "Mettre en place un compost pour réduire les déchets organiques envoyés à la décharge.",
+        "progress": "40%",
+        "deadline": "2025-06-10"
+        },
+        {
+        "user_id": 21,
+        "username": "harden_765", 
+        "goal_id": 15,
+        "goal_description": "Acheter des produits certifiés équitables et issus du commerce responsable.",
+        "progress": "75%",
+        "deadline": "2025-12-31"
+        },
+        {
+        "user_id": 22,
+        "username": "ecologist_123", 
+        "goal_id": 16,
+        "goal_description": "Privilégier les voyages en train ou en transport en commun, et compenser les émissions de CO2 des vols.",
+        "progress": "55%",
+        "deadline": "2025-11-01"
+        },
+        {
+        "user_id": 23,
+        "username": "make_earth", 
+        "goal_id": 17,
+        "goal_description": "Limiter l'achat de nouveaux appareils électroniques et privilégier la réparation ou le recyclage.",
+        "progress": "60%",
+        "deadline": "2025-07-15"
+        },
+        {
+        "user_id": 5,
+        "username": "eco_activist88",
+        "goal_id": 18,
+        "goal_description": "Acheter auprès d'entreprises qui ont des pratiques durables et éthiques.",
+        "progress": "45%",
+        "deadline": "2025-10-30"
+        },
+        {
+        "user_id": 24,
+        "username": "victory_earth", 
+        "goal_id": 8,
+        "goal_description": "Réparer ou recycler les appareils électroniques pour éviter qu'ils ne finissent dans les décharges.",
+        "progress": "80%",
+        "deadline": "2025-08-20"
+        },
+        {
+        "user_id": 25,
+        "username": "life_earth_244", 
+        "goal_id": 20,
+        "goal_description": "Adopter un régime végétalien pour réduire l'empreinte écologique liée à la production de viande.",
+        "progress": "25%",
+        "deadline": "2025-04-01"
+        },
+        {
+        "user_id": 26,
+        "username": "life_057", 
+        "goal_id": 20,
+        "goal_description": "Adopter un régime végétalien pour réduire l'empreinte écologique liée à la production de viande.",
+        "progress": "90%",
+        "deadline": "2025-12-15"
+        },
+        {
+        "user_id": 6,
+        "username": "planet_saver",
+        "goal_id": 22,
+        "goal_description": "Passer aux factures électroniques et réduire l'utilisation du papier dans le bureau.",
+        "progress": "55%",
+        "deadline": "2025-09-05"
+        },
+        {
+        "user_id": 27,
+        "username": "corn_56", 
+        "goal_id": 23,
+        "goal_description": "Utiliser uniquement des sacs réutilisables pour les courses et les sorties.",
+        "progress": "100%",
+        "deadline": "2025-01-01"
+        },
+        {
+        "user_id": 7,
+        "username": "green_hiker",
+        "goal_id": 24,
+        "goal_description": "Utiliser des méthodes pour économiser l'eau lors des randonnées, comme prendre des douches courtes et éviter le gaspillage.",
+        "progress": "70%",
+        "deadline": "2025-10-10"
+        },
+        {
+        "user_id": 8,
+        "username": "eco_warrior99",
+        "goal_id": 25,
+        "goal_description": "Installer des appareils électroménagers écoénergétiques et éteindre les appareils non utilisés.",
+        "progress": "85%",
+        "deadline": "2025-12-01"
+        },
+        {
+        "user_id": 9,
+        "username": "forest_friend",
+        "goal_id": 26,
+        "goal_description": "Réduire la consommation d'objets matériels en privilégiant des choix de qualité et durables.",
+        "progress": "50%",
+        "deadline": "2025-09-15"
+        },
+      {
+        "user_id": 10,
+        "username": "climate_crusader",
+        "goal_id": 20,
+        "goal_description": "Adopter un régime végétalien pour réduire l'empreinte écologique liée à la production de viande.",
+        "progress": "30%",
+        "deadline": "2026-01-01"
+        }
+    ]
+      
+    
+}
+  
