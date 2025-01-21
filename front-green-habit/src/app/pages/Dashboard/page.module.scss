@@ -1,0 +1,34 @@
+.home_container {
+  font-family: var(--font-geist-sans);
+  // background-color: #7fffd4;
+  width: 100%;
+  padding: 39px 31px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // 4 colonnes
+  gap: 35px 24px; // Espacement vertical et horizontal
+}
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: normal;
+  align-content: normal;
+}
+.Navbar {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}
+.chart_container
+{
+  width: 100%;
+  // display: block;
+  // flex-grow: 0;
+  // flex-shrink: 1;
+  // flex-basis: auto;
+  // align-self: auto;
+  // order: 0;
+}
