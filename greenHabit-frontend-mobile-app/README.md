@@ -78,6 +78,7 @@ Voici une liste des dépendances principales avec leurs versions :
   "react-native-vector-icons": "^10.2.0",
   "react-native-web": "~0.19.13"
 }
+```
 
 # Installation 🛠️
 
