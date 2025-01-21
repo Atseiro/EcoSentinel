@@ -12,12 +12,12 @@ const navItems = [
     icon: <HomeIcon fill="black" width={15} height={15} />,
   },
   {
-    path: "/sales",
+    path: "/pages/Dashboard",
     label: "Sales",
     icon: <SalesIcon fill="black" width={15} height={15} />,
   },
   {
-    path: "/profile",
+    path: "/pages/Dashboard",
     label: "Profile",
     icon: <ProfileIcon fill="black" width={15} height={15} />,
   },

@@ -87,7 +87,7 @@ export default function Authentification() {
 
           // Sauvegarder le token ou rediriger, selon la logique
           localStorage.setItem("token", data.accessToken);
-          window.location.href = "/pages/dashboard"; // Rediriger vers le tableau de bord
+          window.location.href = "/pages/Dashboard"; // Rediriger vers le tableau de bord
         } else {
           const errorData = await response.json();
           setErrorMessage(errorData.message || "Erreur lors de la connexion");
