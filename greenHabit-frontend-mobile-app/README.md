@@ -118,6 +118,11 @@ npm run start
   - password: securepassword123
 ---
 
+## Documentation technique
+
+Pour une version téléchargeable de la documentation technique, consultez le [résumé technique](./assets/Documentation%20Technique.pdf).
+La Version complète se trouve dans le dossier docs/
+
 ## Liens Utiles 🔗
 - **Dépôt GitHub du projet** : [GreenHabit GitHub Repository](https://github.com/Atseiro/EcoSentinel)
 - **Documentation Open Food Facts** : [Open Food Facts API Documentation](https://world.openfoodfacts.org/data)
@@ -128,13 +133,13 @@ npm run start
 Voici quelques captures d'écran de l'application :
 
 - **Page de connexion**  
-  ![Login Screen](#)
+  ![Login Screen](./assets/images/LoginScreen.jpg)
 
 - **Scanner un produit**  
-  ![Scan Screen](#)
+  ![Scan Screen](./assets/images/ScanScreen.jpg)
 
 - **Suivi des objectifs**  
-  ![Goals Screen](#)
+  ![Goals Screen](./assets/images/GoalsScreen.png)
 
 ---
 
